@@ -1,7 +1,12 @@
 import React, {useState }from 'react'
 import { registerPokemon } from '../Services/servicesBack'
 
-const RegistroPokemonComponent = () => {
+const RegistroPokemonComponent = (props) => {
+  const {
+    loadPokemon
+  } = props
+
+
   const [newPokemon, setNewPokemon] = useState({
     id:'',
     nombre:'',
@@ -30,6 +35,7 @@ const RegistroPokemonComponent = () => {
       weight:'',
       type:['']
     })
+    loadPokemon()
 
   }
 

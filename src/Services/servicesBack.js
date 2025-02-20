@@ -95,6 +95,7 @@ let listaPokemon = [
 
   export const getPokemon = () => {
     return listaPokemon
+    console.log(listaPokemon)
 }
 
 export const registerPokemon = (pokemon) => {
@@ -105,7 +106,7 @@ export const registerPokemon = (pokemon) => {
 
 export const eliminarPokemon = (pokemon) => {
     const auxList = listaPokemon.filter((e) => e.nombre != pokemon.nombre)
-    listaParejas = auxList
+    listaPokemon = auxList
 }
 
 /*Para editar.  LE PASO PARAMETRO DE PAREJA Y PAREJAMODIFY.
