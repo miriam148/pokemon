@@ -46,27 +46,27 @@ const RegistroPokemonComponent = (props) => {
         <div className='containerInput'>
         <div>
         <span>Id: </span>
-        <input type="text" name='Id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='Id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Nombre: </span>
-        <input type="text" name='nombre' value={newPokemon.nombre} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='nombre' value={newPokemon.nombre} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Url: </span>
-        <input type="text" name='url' value={newPokemon.url} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='url' value={newPokemon.url} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Height: </span>
-        <input type="text" name='height' value={newPokemon.height} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='height' value={newPokemon.height} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Weight: </span>
-        <input type="text" name='weight' value={newPokemon.weight} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='weight' value={newPokemon.weight} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Type: </span>
-        <input type="text" name='type' value={newPokemon.type} onChange={(e) => {inputHandler(e.target.value)}}/>
+        <input type="text" name='type' value={newPokemon.type} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         </div>
         <div>

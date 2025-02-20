@@ -5,16 +5,23 @@ import {eliminarPokemon} from '../Services/servicesBack'
 
 const DetallePokemonComponent = (props) => {
   const {
-    pokemon
+    pokemon,
+    loadPokemon,
+    setPokemonSelected
   } = props
   console.log(pokemon)
 
-  // if (!pokemon) {
-  //   return <div>No se ha seleccionado ningún Pokémon</div>;
-  // }
+  if (!pokemon) {
+    return <div>No se ha seleccionado ningún Pokémon</div>;
+  }
 
   const eliminarPokemonHandler = (pokemon) => {
     eliminarPokemon(pokemon)
+    loadPokemon()
+  }
+
+  const selectPokemon = () => {
+    setPokemonSelected(pokemon)
   }
 
   return (
@@ -49,7 +56,7 @@ const DetallePokemonComponent = (props) => {
               <button onClick={() => {eliminarPokemonHandler(pokemon)}} >Eliminar</button>
             </div>
             <div>
-              <button onClick={() => {}}>Detalles</button>
+              <button onClick={() => {selectPokemon}}>Detalles</button>
             </div>
             
             <hr />

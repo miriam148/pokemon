@@ -9,6 +9,7 @@ import ContactoComponent from './components/ContactoComponent'
 const ListaPokemonPage = () => {
     const [menuOption, setMenuOption] = useState('') //registro-contacto-listado-detalle
     const [listadoDePokemon, setListadoDePokemon] = useState([])
+    const [pokemonSelected, setpokemonSelected] = useState(undefined)
 
     const loadData = () => {
         const aux = getPokemon()
@@ -21,6 +22,11 @@ const ListaPokemonPage = () => {
 
     }
 
+    const selectPokemonHandler = (pokemon) => {
+        setpokemonSelected(pokemon)
+        setMenuOption('DETALLES')
+    }
+
     useEffect (() => {
         loadData();
       }, [])
@@ -31,7 +37,7 @@ const ListaPokemonPage = () => {
         <div style={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent:'center', gap:30}}>
             <div><button onClick={() => menuOptionHandler('REGISTRO')} >Registra tu Pokemon</button></div>
             <div><button  onClick={() => menuOptionHandler('CONTACTO')}>Contacto</button></div>
-            <div><button  onClick={() => menuOptionHandler('DETALLES')}>Lista Pokemon</button></div>
+            <div><button  onClick={() => menuOptionHandler('LISTADO')}>Lista Pokemon</button></div>
 
         </div>
         <hr />
@@ -42,8 +48,8 @@ const ListaPokemonPage = () => {
                 : menuOption === "CONTACTO"
                 ?(<ContactoComponent/>)
                 :menuOption === "DETALLES"
-                ?(  <DetallePokemonComponent/>)
-                : <ListadoPokemonComponent listadoPokemon={listadoDePokemon} loadPokemon={loadData}/>
+                ?(  <DetallePokemonComponent pokemon={pokemonSelected} loadPokemon={loadData} />)
+                : <ListadoPokemonComponent listadoPokemon={listadoDePokemon} loadPokemon={loadData} setpokemonSelected={selectPokemonHandler} />
             }
             
            

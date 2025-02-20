@@ -6,7 +6,8 @@ import DetallePokemonComponent from './DetallePokemonComponent'
 const ListadoPokemonComponent = (props) => {
   const {
     listadoPokemon,
-    loadPokemon
+    loadPokemon,
+    setPokemonSelected
   } = props
 
   
@@ -15,7 +16,7 @@ const ListadoPokemonComponent = (props) => {
       <h2>Lista de Pokemon</h2>
       {
         (listadoPokemon && listadoPokemon.length > 0) 
-        ? listadoPokemon.map((e, idx) => (<DetallePokemonComponent key={idx} pokemon={e} loadPokemon={loadPokemon}/>))
+        ? listadoPokemon.map((e, idx) => (<DetallePokemonComponent key={idx} pokemon={e} loadPokemon={loadPokemon} setPokemonSelected={setPokemonSelected} />))
         : <div>No hay pokemon que mostrar</div>
       }
     </div>
