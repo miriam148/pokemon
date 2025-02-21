@@ -14,7 +14,7 @@ const ListaPokemonPage = () => {
     const loadData = () => {
         const aux = getPokemon()
         setListadoDePokemon(aux)
-        console.log(aux)
+        // console.log(aux)
     }
 
     const menuOptionHandler = (option) => {
@@ -37,7 +37,7 @@ const ListaPokemonPage = () => {
         <div style={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent:'center', gap:30}}>
             <div><button onClick={() => menuOptionHandler('REGISTRO')} >Registra tu Pokemon</button></div>
             <div><button  onClick={() => menuOptionHandler('CONTACTO')}>Contacto</button></div>
-            <div><button  onClick={() => menuOptionHandler('LISTADO')}>Lista Pokemon</button></div>
+            <div><button  onClick={() => menuOptionHandler('LISTADO')}>Lista Pokémon</button></div>
 
         </div>
         <hr />
@@ -48,8 +48,8 @@ const ListaPokemonPage = () => {
                 : menuOption === "CONTACTO"
                 ?(<ContactoComponent/>)
                 :menuOption === "DETALLES"
-                ?(  <DetallePokemonComponent pokemon={pokemonSelected} loadPokemon={loadData} />)
-                : <ListadoPokemonComponent listadoPokemon={listadoDePokemon} loadPokemon={loadData} setpokemonSelected={selectPokemonHandler} />
+                ?(  <DetallePokemonComponent pokemon={pokemonSelected} loadPokemon={loadData} setMenuOption={setMenuOption} setPokemonSelected={selectPokemonHandler}  />)
+                : <ListadoPokemonComponent listadoPokemon={listadoDePokemon} loadPokemon={loadData} setPokemonSelected={selectPokemonHandler} />
             }
             
            

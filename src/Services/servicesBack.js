@@ -109,11 +109,11 @@ export const eliminarPokemon = (pokemon) => {
     listaPokemon = auxList
 }
 
-/*Para editar.  LE PASO PARAMETRO DE PAREJA Y PAREJAMODIFY.
-PAREJA: VALORES SIN MODIFICAR
-PAREJA MODIFY: VALORES MODIFICADOS DE LA PAREJA  */
-export const  editarPareja= (pareja, parejaModify) => {
-const bdAux = listaParejas.filter(p => p.id !== pareja.id) //LA SACO DE LA LISTA Y LE METO LA NUEVA CON SUS MODIFICACIONES
-bdAux.push(parejaModify)
-listaParejas = bdAux // LA P DE PAREJA Y CUANDO EL ID SEA DISTINTO A PAREJA.ID QUE ME LO META EN ADAUX
+/*Para editar.  LE PASO PARAMETRO DE POKEMON Y POKEMONMODIFY.
+POKEMON: VALORES SIN MODIFICAR
+POKEMON MODIFY: VALORES MODIFICADOS DE POKEMON  */
+export const  editarPokemon= (pokemon, pokemonModify) => {
+const bdAux = listaPokemon.filter(p => p.id !== pokemon.id) //LA SACO DE LA LISTA Y LE METO LA NUEVA CON SUS MODIFICACIONES
+bdAux.push(pokemonModify)
+listaPokemon = bdAux // LA P DE POKEMON Y CUANDO EL ID SEA DISTINTO A POKEMON.ID QUE ME LO META EN ADAUX
 }

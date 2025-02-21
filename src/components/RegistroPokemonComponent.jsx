@@ -25,10 +25,17 @@ const RegistroPokemonComponent = (props) => {
     setNewPokemon(pokemonAux)
   }
 
-  const registerHandler = () => {
-    registerPokemon(newPokemon)
+  const registerHandler = () => { //REPASAR ESTO
+    const pokemonWithNumberId = {
+      ...newPokemon,
+      id: parseInt(newPokemon.id, 10) 
+    };
+
+
+
+    registerPokemon(pokemonWithNumberId)
     setNewPokemon({
-      id:'',
+      id: '',
       nombre:'',
       url:'',
       height:'',
@@ -46,7 +53,7 @@ const RegistroPokemonComponent = (props) => {
         <div className='containerInput'>
         <div>
         <span>Id: </span>
-        <input type="text" name='Id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <input type="number" name='id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
         <span>Nombre: </span>
@@ -70,7 +77,7 @@ const RegistroPokemonComponent = (props) => {
         </div>
         </div>
         <div>
-        <button onClick={() => {registerHandler}}> Regístralo </button>
+        <button onClick={registerHandler}> Regístralo </button>
         </div>
             
             

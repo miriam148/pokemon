@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {eliminarPokemon} from '../Services/servicesBack'
 
@@ -7,7 +8,8 @@ const DetallePokemonComponent = (props) => {
   const {
     pokemon,
     loadPokemon,
-    setPokemonSelected
+    setPokemonSelected,
+    setMenuOption
   } = props
   console.log(pokemon)
 
@@ -20,8 +22,10 @@ const DetallePokemonComponent = (props) => {
     loadPokemon()
   }
 
-  const selectPokemon = () => {
+  const selectPokemon = (pokemon) => {
     setPokemonSelected(pokemon)
+    console.log(pokemon)
+    // setMenuOption && setMenuOption('DETALLES');
   }
 
   return (
@@ -55,9 +59,20 @@ const DetallePokemonComponent = (props) => {
             <div>
               <button onClick={() => {eliminarPokemonHandler(pokemon)}} >Eliminar</button>
             </div>
-            <div>
-              <button onClick={() => {selectPokemon}}>Detalles</button>
+            {
+              setMenuOption ? (
+                <div>
+                  <button onClick={() => setMenuOption('LISTADO')}>Volver</button>
+                </div>
+              
+              ) : (
+                <div>
+                  {/* <button onClick={() => {selectPokemon}}>Detalles</button> */}
+                  <button onClick={() => selectPokemon(pokemon) }>Detalles</button>
             </div>
+              )
+            }
+            
             
             <hr />
           </div>
