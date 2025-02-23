@@ -97,30 +97,30 @@ const RegistroPokemonComponent = (props) => {
       }
       
       <div  >
-        <div className='containerInput'>
+        <div className='containerInput' >
         <div >
-        <span>Id: </span>
-        <input type="number" name='id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span >Id: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '40px' }}type="number" name='id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Nombre: </span>
-        <input type="text" name='nombre' value={newPokemon.nombre} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span >Nombre: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '80px' }}type="text" name='nombre' value={newPokemon.nombre} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Url: </span>
-        <input type="text" name='url' value={newPokemon.url} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span >Url: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '45px' }} type="text" name='url' value={newPokemon.url} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Height: </span>
-        <input type="text" name='height' value={newPokemon.height} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span >Height: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '70px' }} type="text" name='height' value={newPokemon.height} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Weight: </span>
-        <input type="text" name='weight' value={newPokemon.weight} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span >Weight: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '70px' }} type="text" name='weight' value={newPokemon.weight} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div >
-        <span>Type: </span>
-        <input type="text" name='type' value={newPokemon.type} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
+        <span > Type: </span>
+        <input style={{ width: '200px', textAlign: 'right', marginRight: '55px' }} type="text" name='type' value={newPokemon.type} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         </div>
         <div style={{ margin: '20px 0' }}>
