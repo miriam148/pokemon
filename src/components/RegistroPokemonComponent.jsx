@@ -51,8 +51,12 @@ const RegistroPokemonComponent = (props) => {
   }
 
   const modifyHandler = () => {
-    editarPokemon(pokemon, newPokemon)
-    setPokemonSelected(newPokemon)
+    const updatePokemon = {
+      ...pokemon,
+      nombre: newPokemon.nombre
+    }
+    editarPokemon(pokemon, updatePokemon)
+    setPokemonSelected(updatePokemon)
     setNewPokemon({
       id: '',
       nombre:'',
