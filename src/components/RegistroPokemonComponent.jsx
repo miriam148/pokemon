@@ -11,12 +11,12 @@ const RegistroPokemonComponent = (props) => {
 
 
   const [newPokemon, setNewPokemon] = useState({
-    id:'',
-    nombre:'',
-    url:'',
-    height:'',
-    weight:'',
-    type:['']
+    id:pokemon ? pokemon.id : '',
+    nombre:pokemon ? pokemon.nombre : '',
+    url:pokemon ? pokemon.url : '',
+    height:pokemon ? pokemon.height : '',
+    weight:pokemon ? pokemon.weight : '',
+    type:pokemon ? pokemon.type : ['']
 
   })
 

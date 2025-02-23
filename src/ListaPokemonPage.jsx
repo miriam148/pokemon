@@ -23,6 +23,10 @@ const ListaPokemonPage = () => {
 
     }
 
+    useEffect(() => {
+        
+    }, [pokemonSelected])
+
     const selectPokemonHandler = (pokemon) => {
         setpokemonSelected(pokemon)
         setMenuOption('DETALLES')
