@@ -1,9 +1,12 @@
 import React, {useState }from 'react'
-import { registerPokemon } from '../Services/servicesBack'
+import { editarPokemon, registerPokemon } from '../Services/servicesBack'
 
 const RegistroPokemonComponent = (props) => {
   const {
-    loadPokemon
+    loadPokemon,
+    setMenuOption,
+    pokemon,
+    setPokemonSelected
   } = props
 
 
@@ -43,41 +46,92 @@ const RegistroPokemonComponent = (props) => {
       type:['']
     })
     loadPokemon()
+    setMenuOption('LISTADO')
 
+  }
+
+  const modifyHandler = () => {
+    editarPokemon(pokemon, newPokemon)
+    setPokemonSelected(newPokemon)
+    setNewPokemon({
+      id: '',
+      nombre:'',
+      url:'',
+      height:'',
+      weight:'',
+      type:['']
+      
+     
+    })
+    loadPokemon()
+    setMenuOption('DETALLES')
+  }
+
+  const cancelHandler = () => {
+    setNewPokemon({
+      id: '',
+      nombre:'',
+      url:'',
+      height:'',
+      weight:'',
+      type:['']
+
+    })
+    setMenuOption('DETALLES')
   }
 
   return (
     <div>
-      <h2>Registro de Pokemon</h2>
-      <div style={{display:'flex', flexDirection:'column', alignItems: 'center', justifyContent:'center', gap:10}}>
+      {
+        pokemon? (
+          <h2>Editar pokémon</h2>
+
+        )
+        :(
+          <h2>Registro de Pokémon</h2>
+        )
+      }
+      
+      <div  >
         <div className='containerInput'>
-        <div>
+        <div >
         <span>Id: </span>
         <input type="number" name='id' value={newPokemon.id} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span>Nombre: </span>
+        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Nombre: </span>
         <input type="text" name='nombre' value={newPokemon.nombre} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span>Url: </span>
+        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Url: </span>
         <input type="text" name='url' value={newPokemon.url} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span>Height: </span>
+        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Height: </span>
         <input type="text" name='height' value={newPokemon.height} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         <div>
-        <span>Weight: </span>
+        <span style={{ width: '80px', textAlign: 'right', marginRight: '10px' }}>Weight: </span>
         <input type="text" name='weight' value={newPokemon.weight} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
-        <div>
+        <div >
         <span>Type: </span>
         <input type="text" name='type' value={newPokemon.type} onChange={(e) => {inputHandler(e.target.name, e.target.value)}}/>
         </div>
         </div>
-        <div>
-        <button onClick={registerHandler}> Regístralo </button>
+        <div style={{ margin: '20px 0' }}>
+          {
+            pokemon
+            ?(
+              <div>
+              <button  style={{ marginRight: '10px' }} onClick={modifyHandler} > Editar </button>
+              <button  onClick={cancelHandler} > Volver </button>
+              </div>
+            ) : (
+              <button onClick={registerHandler} > Registra tu pokémon </button>
+            )
+          }
+       
         </div>
             
             

@@ -19,6 +19,7 @@ const DetallePokemonComponent = (props) => {
 
   const eliminarPokemonHandler = (pokemon) => {
     eliminarPokemon(pokemon)
+    setMenuOption()
     loadPokemon()
   }
 
@@ -56,14 +57,21 @@ const DetallePokemonComponent = (props) => {
               <span>Type: </span>
               <span>{pokemon.type}</span>
             </div>
-            <div>
+            <div style={{ margin: '5px 0' }}>
               <button onClick={() => {eliminarPokemonHandler(pokemon)}} >Eliminar</button>
             </div>
             {
               setMenuOption ? (
                 <div>
-                  <button onClick={() => setMenuOption('LISTADO')}>Volver</button>
+                   <div>
+                  <button style={{ margin: '10px 0' }} onClick={() => setMenuOption('LISTADO')}>Volver</button>
+                   </div>
+                   <div>
+                  <button onClick={() => setMenuOption('REGISTRO')}>Editar</button>
+                   </div>
                 </div>
+               
+                
               
               ) : (
                 <div>

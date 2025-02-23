@@ -18,6 +18,7 @@ const ListaPokemonPage = () => {
     }
 
     const menuOptionHandler = (option) => {
+        setpokemonSelected(undefined)
         setMenuOption(option)
 
     }
@@ -44,9 +45,9 @@ const ListaPokemonPage = () => {
         <div>
             {
                 menuOption === "REGISTRO"
-                ?(<RegistroPokemonComponent loadPokemon={loadData} />)
+                ?(<RegistroPokemonComponent loadPokemon={loadData} setMenuOption={setMenuOption} pokemon={pokemonSelected} setPokemonSelected={setpokemonSelected}  />)
                 : menuOption === "CONTACTO"
-                ?(<ContactoComponent/>)
+                ?(<ContactoComponent setMenuOption={setMenuOption}/>)
                 :menuOption === "DETALLES"
                 ?(  <DetallePokemonComponent pokemon={pokemonSelected} loadPokemon={loadData} setMenuOption={setMenuOption} setPokemonSelected={selectPokemonHandler}  />)
                 : <ListadoPokemonComponent listadoPokemon={listadoDePokemon} loadPokemon={loadData} setPokemonSelected={selectPokemonHandler} />
