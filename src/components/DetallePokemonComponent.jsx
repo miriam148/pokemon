@@ -20,6 +20,7 @@ const DetallePokemonComponent = (props) => {
   const eliminarPokemonHandler = (pokemon) => {
     eliminarPokemon(pokemon)
     loadPokemon()
+    setMenuOption('LISTADO')
   }
 
   const selectPokemon = (pokemon) => {
